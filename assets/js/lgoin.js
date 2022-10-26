@@ -10,7 +10,7 @@ $(() => {
     const layer = layui.layer
     $('#form_reg').on('submit', e => {
         e.preventDefault();
-        $.post('http://127.0.0.1:80/api/signup',
+        $.post('/api/signup',
             {
                 userName: $('#form_reg [name=userName]').val(),
                 password: $('#form_reg [name=password]').val()
@@ -26,7 +26,7 @@ $(() => {
         e.preventDefault();
         $.ajax({
             method: 'post',
-            url: "http://127.0.0.1:80/api/signin",
+            url: "/api/signin",
             data: $(this).serialize(),
             success: function (response) {
                 if (response.status != 0) return layer.msg(response.message);

@@ -1,0 +1,39 @@
+.layui-nav-tree-header {
+    height: 45px;
+    margin-right: 40px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.layui-footer {
+    text-align: center;
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+}
+
+.user-info {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+
+}
+
+.user-info>a {
+    color: white !important;
+}
+
+.user-avatar {
+    height: 33px;
+    width: 33px;
+    display: inline-block;
+    font: normal 400 30px/33px Arial;
+    /* font: italic bold 12px/20px arial, sans-serif; */
+    position: relative;
+    top: 5px;
+    border-radius: 50%;
+    background-color: rgb(122, 74, 74);
+}
