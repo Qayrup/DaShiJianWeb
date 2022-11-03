@@ -21,7 +21,7 @@
             <form id="form_login" class="layui-form">
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-username">:</i>
-                    <input type="text" name="userName" required lay-verify="required|username" placeholder="请输入用户名"
+                    <input type="text" name="userName" required lay-verify="required|userName" placeholder="请输入用户名"
                         autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item">
@@ -41,7 +41,7 @@
             <form id="form_reg" class="layui-form">
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-username">:</i>
-                    <input type="text" name="userName" required lay-verify="required|username" placeholder="请输入用户名"
+                    <input type="text" name="userName" required lay-verify="required|userName" placeholder="请输入用户名"
                         autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item">
@@ -67,31 +67,32 @@
     <script src="./assets/js/baseAPI/jqueryAjaxPrefilter.js"></script>
     <script src="./assets/lib/layui/layui.all.js"></script>
     <script src="./assets/js/lgoin.js"></script>
+    <script src="/assets/lib/layui/LayuiFormVerify.js"></script>
     <script>
         // layui效验规则
         const layuiForm = layui.form
         layuiForm.verify({
-            username: function (value, item) { //value：表单的值、item：表单的DOM对象
-                if (!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)) {
-                    return '用户名不能有特殊字符';
-                }
-                if (/(^\_)|(\__)|(\_+$)/.test(value)) {
-                    return '用户名首尾不能出现下划线\'_\'';
-                }
-                if (/^\d+\d+\d$/.test(value)) {
-                    return '用户名不能全为数字';
-                }
+            // username: function (value, item) { //value：表单的值、item：表单的DOM对象
+            //     if (!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)) {
+            //         return '用户名不能有特殊字符';
+            //     }
+            //     if (/(^\_)|(\__)|(\_+$)/.test(value)) {
+            //         return '用户名首尾不能出现下划线\'_\'';
+            //     }
+            //     if (/^\d+\d+\d$/.test(value)) {
+            //         return '用户名不能全为数字';
+            //     }
 
-                //如果不想自动弹出默认提示框，可以直接返回 true，这时你可以通过其他任意方式提示（v2.5.7 新增）
-                if (value === 'xxx') {
-                    alert('用户名不能为敏感词');
-                    return true;
-                }
-            }
+            //     //如果不想自动弹出默认提示框，可以直接返回 true，这时你可以通过其他任意方式提示（v2.5.7 新增）
+            //     if (value === 'xxx') {
+            //         alert('用户名不能为敏感词');
+            //         return true;
+            //     }
+            // },
 
             //我们既支持上述函数式的方式，也支持下述数组的形式
             //数组的两个值分别代表：[正则匹配、匹配不符时的提示文字]
-            , password: [
+            password: [
                 /^[\S]{6,12}$/
                 , '密码必须6到12位，且不能出现空格'
             ],

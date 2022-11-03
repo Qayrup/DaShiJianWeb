@@ -1,0 +1,11 @@
+.layui-form {
+    width: 500px;
+}
+
+.layui-card {
+    background-color: #ffffff;
+}
+
+input[name="userName"] {
+    background-color: #c7c5c5;
+}

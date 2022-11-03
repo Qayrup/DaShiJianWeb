@@ -19,7 +19,6 @@ function userInfo() {
         type: 'get',
         url: '/my/userInfo',
         success: response => {
-            console.log(response.data);
             //调用renderAvatar渲染用户头像
             renderAvatar(response.data)
         }
