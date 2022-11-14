@@ -1,0 +1,21 @@
+.layui-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table {
+    text-align: center;
+}
+
+thead tr th {
+    text-align: center !important;
+    background-color: rgb(133, 127, 127);
+    color: white;
+    font-size: 18px !important;
+}
+
+#addCateForm {
+    padding-top: 20px;
+    padding-right: 35px;
+}

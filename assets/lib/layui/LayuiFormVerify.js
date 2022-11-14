@@ -25,8 +25,12 @@ let verifyObj = {
         suggest: '必须是手机号码'
     },
     isChinese: {
-        rules: /[\u4e00 - \u9fa5]/,
+        rules: /[\u4e00-\u9fa5]{1,6}/,
         suggest: '必须是中文字符'
+    },
+    isEnglish: {
+        rules: /[A-Za-z]{1,12}/,
+        suggest: '必须是英文字符'
     },
     doubleByteCharacters: {
         rules: /[^\x00-\xff]/,
@@ -54,6 +58,13 @@ $(() => {
         },
         password: value => {
             if (!verifyObj.weakPasswords.rules.test(value)) return verifyObj.weakPasswords.suggest
+        },
+        isChinese: value => {
+            if (!verifyObj.isChinese.rules.test(value)) return verifyObj.isChinese.suggest
+        },
+        isEnglish: value => {
+            if (!verifyObj.isEnglish.rules.test(value)) return verifyObj.isEnglish.suggest
         }
+
     })
 })
